@@ -1,0 +1,51 @@
+stages:
+  - test
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+
+# Use Python 3.12 slim image
+image: python:3.12-slim
+
+before_script:
+  - python --version
+  - pip install --upgrade pip
+  - pip install -r requirements.txt
+
+# Main job: Test API document requirements
+api-document-mapper:
+  stage: test
+  script:
+    # Run the main mapper script
+    - python api_doc_mapper.py
+        --postman collections/my_collection.postman_collection.json
+        --env collections/my_env.postman_environment.json
+        --docs documents
+        --random-file-per-api
+        --out outputs
+    
+    # Generate final mapping
+    - python summarize_to_map.py
+    
+    # Display summary
+    - echo "✅ API testing completed"
+    - ls -lh outputs/
+  
+  # Save artifacts for download
+  artifacts:
+    when: always
+    paths:
+      - outputs/
+    expire_in: 30 days
+  
+  # Only run on main branch or when manually triggered
+  only:
+    - main
+    - triggers
+  
+  # Allow manual runs
+  when: manual

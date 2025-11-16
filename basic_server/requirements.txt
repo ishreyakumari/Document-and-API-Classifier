@@ -1,0 +1,25 @@
+# FastAPI Document Verification Server
+# Python 3.8+ required
+
+# Web Framework
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+python-multipart==0.0.20
+
+# Environment Variables
+python-dotenv==1.0.1
+
+# Google Cloud Vision OCR
+google-cloud-vision==3.8.1
+
+# Google Generative AI (Gemini)
+google-generativeai==0.8.3
+
+# PDF Processing
+pdf2image==1.17.0
+Pillow==11.0.0
+
+# Note: pdf2image requires poppler-utils to be installed on your system
+# macOS: brew install poppler
+# Ubuntu/Debian: sudo apt-get install poppler-utils
+# Windows: Download from https://github.com/oschwartz10612/poppler-windows/releases/

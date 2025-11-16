@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "9d1e396c-2453-4507-9843-96749857f347",
+		"name": "sk-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28853109",
+		"_collection_link": "https://planetary-escape-817198.postman.co/workspace/New-Team-Workspace~ecee62a7-20e3-4cc4-a3e4-3b3ad2276d8e/collection/28853109-9d1e396c-2453-4507-9843-96749857f347?action=share&source=collection_link&creator=28853109"
+	},
+	"item": [
+		{
+			"name": "verify-aadhaar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "document",
+							"type": "file",
+							"src": "./documents/aadhaar.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/verify-aadhaar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"verify-aadhaar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify-driving-license",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "document",
+							"type": "file",
+							"src": "./documents/driving_license.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/verify-driving-license",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"verify-pan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify-pan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "document",
+							"type": "file",
+							"src": "./documents/pan.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/verify-pan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"verify-pan"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
